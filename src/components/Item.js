@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 export function Item({ todo, onUpdate, onDelete }) {
   const [editing, setEditing] = useState(false);
+  const [name, setName] = useState(todo.name);
 
   const handleEdit = () => {
     setEditing(true);
@@ -20,10 +21,20 @@ export function Item({ todo, onUpdate, onDelete }) {
     onDelete(todo.id);
   };
 
-  const { name, completed } = todo;
+  const handleChange = event => setName(event.target.value);
+
+  const handleBlur = () => {
+    onUpdate(
+      todo.id,
+      { name }
+    );
+    setEditing(false);
+  };
+
+  const { completed } = todo;
 
   return (
-    <li className={classNames({ completed })}>
+    <li className={classNames({ completed, editing })}>
       <div className="view">
         <input
           className="toggle"
@@ -31,12 +42,22 @@ export function Item({ todo, onUpdate, onDelete }) {
           checked={completed}
           onChange={handleCompleted}
         />
-        <label onDoubleClick={handleEdit}>{name}</label>
+        <label onDoubleClick={handleEdit}>{todo.name}</label>
         <button
           className="destroy"
           onClick={handleDelete}
         />
       </div>
+      {
+        editing &&
+        <input
+          className="edit"
+          value={name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          autoFocus={true}
+        />
+      }
     </li>
   );
 }

@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Item } from './Item';
 
-export function List({ todos, onUpdate, onDelete }) {
+export function List({ todos, onUpdate, onDelete, onCompleteAll }) {
+  const areAllCompleted = todos.length && todos.every(todo => todo.completed);
+
   return (
     <section className="main">
-      <input id="toggle-all" className="toggle-all" type="checkbox" />
-      <label htmlFor="toggle-all" ></label>
+      <input id="toggle-all" className="toggle-all" type="checkbox" checked={areAllCompleted} readOnly />
+      <label htmlFor="toggle-all" onClick={onCompleteAll}></label>
 
       <ul className="todo-list">
         {todos.map(todo =>
@@ -25,5 +27,6 @@ export function List({ todos, onUpdate, onDelete }) {
 List.propTypes = {
   todos: PropTypes.array.isRequired,
   onUpdate: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onCompleteAll: PropTypes.func.isRequired
 };
