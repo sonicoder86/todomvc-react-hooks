@@ -7,7 +7,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
     "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
     "todomvc-app-css": "^2.2.0",
     "uuid": "^3.3.3"
   },

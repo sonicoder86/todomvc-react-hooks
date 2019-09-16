@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const ENTER_KEY = 13;
 
-export function Header({ onSave }) {
+export function Header({ onCreate }) {
   const [name, setName] = useState('');
 
   const handleChange = event => setName(event.target.value);
 
   const handleSubmit = event => {
     if (event.which === ENTER_KEY) {
-      onSave(name);
+      onCreate(name);
       setName('');
     }
   };
@@ -30,5 +30,5 @@ export function Header({ onSave }) {
 }
 
 Header.propTypes = {
-  onSave: PropTypes.func.isRequired
+  onCreate: PropTypes.func.isRequired
 };
