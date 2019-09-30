@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Item } from './Item';
 
-export function List({ todos, onUpdate, onDelete, onCompleteAll }) {
+export function List({ todos, onUpdate, onRemove, onCompleteAll }) {
   const areAllCompleted = todos.length && todos.every(todo => todo.completed);
 
   return (
@@ -16,7 +16,7 @@ export function List({ todos, onUpdate, onDelete, onCompleteAll }) {
             key={todo.id}
             todo={todo}
             onUpdate={onUpdate}
-            onDelete={onDelete}
+            onRemove={onRemove}
           />
         )}
       </ul>
@@ -27,6 +27,6 @@ export function List({ todos, onUpdate, onDelete, onCompleteAll }) {
 List.propTypes = {
   todos: PropTypes.array.isRequired,
   onUpdate: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
   onCompleteAll: PropTypes.func.isRequired
 };

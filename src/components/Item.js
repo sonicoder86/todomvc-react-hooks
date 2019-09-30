@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export function Item({ todo, onUpdate, onDelete }) {
+export function Item({ todo, onUpdate, onRemove }) {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(todo.name);
 
@@ -18,7 +18,7 @@ export function Item({ todo, onUpdate, onDelete }) {
   };
 
   const handleDelete = () => {
-    onDelete(todo.id);
+    onRemove(todo.id);
   };
 
   const handleChange = event => setName(event.target.value);
@@ -65,5 +65,5 @@ export function Item({ todo, onUpdate, onDelete }) {
 Item.propTypes = {
   todo: PropTypes.object.isRequired,
   onUpdate: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired
+  onRemove: PropTypes.func.isRequired
 };
