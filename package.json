@@ -1,6 +1,8 @@
 {
   "name": "todoapp-react",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/react": "^9.4.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -14,7 +16,7 @@
   "scripts": {
     "start": "PORT=9400 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
