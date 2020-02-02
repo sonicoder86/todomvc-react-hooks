@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Item } from './Item';
+import { withStateAndDispatch } from '../store/container';
 
-export function List({ todos, onUpdate, onRemove, onCompleteAll }) {
-  const areAllCompleted = todos.length && todos.every(todo => todo.completed);
-
+export function List({ visibleTodos, areAllCompleted, onUpdate, onRemove, onCompleteAll }) {
   return (
     <section className="main">
       <input id="toggle-all" className="toggle-all" type="checkbox" checked={areAllCompleted} readOnly />
       <label htmlFor="toggle-all" onClick={onCompleteAll}></label>
 
       <ul className="todo-list">
-        {todos.map(todo =>
+        {visibleTodos.map(todo =>
           <Item
             key={todo.id}
             todo={todo}
@@ -25,8 +24,11 @@ export function List({ todos, onUpdate, onRemove, onCompleteAll }) {
 }
 
 List.propTypes = {
-  todos: PropTypes.array.isRequired,
+  visibleTodos: PropTypes.array.isRequired,
+  areAllCompleted: PropTypes.bool.isRequired,
   onUpdate: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
   onCompleteAll: PropTypes.func.isRequired
 };
+
+export const ListContainer = withStateAndDispatch(List);

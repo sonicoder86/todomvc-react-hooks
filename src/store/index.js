@@ -1,6 +1,6 @@
-import { rootReducer } from './reducers';
+import { rootReducer } from './reducers/index';
 import { createStore } from 'redux';
-import { FILTERS } from './constants/Filters';
+import { FILTERS } from '../constants/Filters';
 
 export const storeFactory = () => createStore(
   rootReducer,

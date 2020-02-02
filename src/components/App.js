@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { TodoLocal } from '../services/TodoLocal';
-import { selectVisible } from '../selectors/Todo';
-import { ListContainer, FooterContainer, HeaderContainer } from '../containers';
+import { withStateAndDispatch } from '../store/container';
+import { HeaderContainer } from './Header';
+import { ListContainer } from './List';
+import { FooterContainer } from './Footer';
+import { CopyRight } from './CopyRight';
 
-export function App({ todos, filter, onLoad }) {
+export function App({ todos, onLoad }) {
   useEffect(() => {
     onLoad(TodoLocal.loadTodos());
   }, [onLoad]);
@@ -14,22 +17,26 @@ export function App({ todos, filter, onLoad }) {
   }, [todos]);
 
   return (
-    <section className="todoapp">
-      <HeaderContainer />
-      {
-        !!todos.length &&
-        <ListContainer todos={selectVisible(todos, filter)} />
-      }
-      {
-        !!todos.length &&
-        <FooterContainer todos={todos} filter={filter} />
-      }
-    </section>
+    <div id="app">
+      <section className="todoapp">
+        <HeaderContainer />
+        {
+          !!todos.length &&
+          <ListContainer />
+        }
+        {
+          !!todos.length &&
+          <FooterContainer />
+        }
+      </section>
+      <CopyRight />
+    </div>
   );
 }
 
 App.propTypes = {
   todos: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
   onLoad: PropTypes.func.isRequired
 };
+
+export const AppContainer = withStateAndDispatch(App);

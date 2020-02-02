@@ -6,28 +6,24 @@ export function Item({ todo, onUpdate, onRemove }) {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(todo.name);
 
-  const handleEdit = () => {
-    setEditing(true);
-  };
+  const handleEdit = () => setEditing(true);
 
   const handleCompleted = () => {
-    onUpdate(
-      todo.id,
-      { completed: !todo.completed }
-    );
+    onUpdate({
+      id :todo.id,
+      completed: !todo.completed
+    });
   };
 
-  const handleDelete = () => {
-    onRemove(todo.id);
-  };
+  const handleRemove = () => onRemove(todo.id);
 
   const handleChange = event => setName(event.target.value);
 
   const handleBlur = () => {
-    onUpdate(
-      todo.id,
-      { name }
-    );
+    onUpdate({
+      id: todo.id,
+      name
+    });
     setEditing(false);
   };
 
@@ -45,7 +41,7 @@ export function Item({ todo, onUpdate, onRemove }) {
         <label onDoubleClick={handleEdit}>{todo.name}</label>
         <button
           className="destroy"
-          onClick={handleDelete}
+          onClick={handleRemove}
         />
       </div>
       {
@@ -53,9 +49,8 @@ export function Item({ todo, onUpdate, onRemove }) {
         <input
           className="edit"
           value={name}
-          onChange={handleChange}
+          onInput={handleChange}
           onBlur={handleBlur}
-          autoFocus={true}
         />
       }
     </li>

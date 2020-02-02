@@ -1,5 +1,5 @@
-import { ACTION_TYPES } from '../constants/ActionTypes';
-import { FILTERS } from '../constants/Filters';
+import { ACTION_TYPES } from '../../constants/ActionTypes';
+import { FILTERS } from '../../constants/Filters';
 
 export const filterReducer = (state = FILTERS.all, action) => {
   switch (action.type) {

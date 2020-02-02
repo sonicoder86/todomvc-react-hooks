@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import { withStateAndDispatch } from '../store/container';
 const ENTER_KEY = 13;
 
 export function Header({ onCreate }) {
@@ -9,10 +9,12 @@ export function Header({ onCreate }) {
   const handleChange = event => setName(event.target.value);
 
   const handleSubmit = event => {
-    if (event.which === ENTER_KEY) {
-      onCreate(name);
-      setName('');
+    if (event.which !== ENTER_KEY) {
+      return;
     }
+
+    onCreate(name);
+    setName('');
   };
 
   return (
@@ -22,8 +24,8 @@ export function Header({ onCreate }) {
         className="new-todo"
         placeholder="What needs to be done?"
         value={name}
-        onChange={handleChange}
-        onKeyDown={handleSubmit}
+        onInput={handleChange}
+        onKeyUp={handleSubmit}
       />
     </header>
   );
@@ -32,3 +34,5 @@ export function Header({ onCreate }) {
 Header.propTypes = {
   onCreate: PropTypes.func.isRequired
 };
+
+export const HeaderContainer = withStateAndDispatch(Header);
