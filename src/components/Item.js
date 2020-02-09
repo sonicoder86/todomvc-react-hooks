@@ -30,7 +30,7 @@ export function Item({ todo, onUpdate, onRemove }) {
   const { completed } = todo;
 
   return (
-    <li className={classNames({ completed, editing })}>
+    <li className={classNames({ completed, editing })} data-testid="todo-item">
       <div className="view">
         <input
           className="toggle"
@@ -38,10 +38,11 @@ export function Item({ todo, onUpdate, onRemove }) {
           checked={completed}
           onChange={handleCompleted}
         />
-        <label onDoubleClick={handleEdit}>{todo.name}</label>
+        <label onDoubleClick={handleEdit} data-testid="todo-name">{todo.name}</label>
         <button
           className="destroy"
           onClick={handleRemove}
+          data-testid="todo-remove"
         />
       </div>
       {

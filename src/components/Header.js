@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStateAndDispatch } from '../store/container';
-const ENTER_KEY = 13;
+const ENTER_KEY = 'Enter';
 
 export function Header({ onCreate }) {
   const [name, setName] = useState('');
@@ -9,7 +9,7 @@ export function Header({ onCreate }) {
   const handleChange = event => setName(event.target.value);
 
   const handleSubmit = event => {
-    if (event.which !== ENTER_KEY) {
+    if (event.key !== ENTER_KEY) {
       return;
     }
 
@@ -26,6 +26,8 @@ export function Header({ onCreate }) {
         value={name}
         onInput={handleChange}
         onKeyUp={handleSubmit}
+        onChange={() => {}}
+        data-testid="todo-create"
       />
     </header>
   );
