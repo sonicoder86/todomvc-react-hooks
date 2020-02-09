@@ -27,10 +27,7 @@ describe('Item', () => {
     const onRemove = jest.fn();
     const { getByTestId } = render(<Item todo={todo} onUpdate={onUpdate} onRemove={onRemove} />);
 
-    fireEvent(
-      getByTestId('todo-remove'),
-      new MouseEvent('click', { bubbles: true, cancelable: true })
-    );
+    fireEvent.click(getByTestId('todo-remove'));
 
     expect(onRemove).toHaveBeenCalledWith(todo.id);
   });
