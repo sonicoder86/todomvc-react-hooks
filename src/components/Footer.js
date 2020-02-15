@@ -5,11 +5,11 @@ import { FILTERS } from '../constants/Filters';
 import { withStateAndDispatch } from '../store/container';
 
 export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelect, onClearCompleted }) {
-  const filterTitles = {
-    [FILTERS.all]: 'All',
-    [FILTERS.active]: 'Active',
-    [FILTERS.completed]: 'Completed'
-  };
+  const filterTitles = [
+    { key: FILTERS.all, value: 'All' },
+    { key: FILTERS.active, value: 'Active' },
+    { key: FILTERS.completed, value: 'Completed' }
+  ];
 
   const itemText = itemsLeft === 1 ? 'item' : 'items';
 
@@ -17,14 +17,14 @@ export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelec
     <footer className="footer">
       <span className="todo-count"><strong>{itemsLeft}</strong><span> {itemText} left</span></span>
       <ul className="filters">
-        {Object.keys(filterTitles).map(filterKey =>
-          <li key={filterKey}>
+        {filterTitles.map(filterTitle =>
+          <li key={filterTitle.key}>
             <a
               href="#"
-              className={classNames({ selected: filterKey === filter })}
-              onClick={() => onFilterSelect(filterKey)}
+              className={classNames({ selected: filterTitle.key === filter })}
+              onClick={() => onFilterSelect(filterTitle.key)}
             >
-              {filterTitles[filterKey]}
+              {filterTitle.value}
             </a>
           </li>
         )}

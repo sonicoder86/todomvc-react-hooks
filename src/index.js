@@ -9,5 +9,5 @@ render(
   <Provider store={storeFactory()}>
     <AppContainer />
   </Provider>,
-  document.getElementById('root')
+  document.getElementsByTagName('app-root')[0]
 );
