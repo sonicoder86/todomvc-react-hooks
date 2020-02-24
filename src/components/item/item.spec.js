@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Item } from './Item';
+import { Item } from './item';
 
 describe('Item', () => {
   it('should display todo item', () => {

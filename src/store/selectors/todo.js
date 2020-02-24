@@ -1,4 +1,4 @@
-import { FILTERS } from '../../constants/Filters';
+import { FILTERS } from '../../constants/filter';
 
 export function selectVisible(todos, filter) {
   switch (filter) {

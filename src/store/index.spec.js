@@ -1,9 +1,9 @@
-import { storeFactory } from './factory';
+import { createStore } from './index';
 import { onCreate } from './actions';
 
-describe('storeFactory', () => {
+describe('createStore', () => {
   it('should create a new instance of store', () => {
-    const store = storeFactory();
+    const store = createStore();
 
     const state = store.getState();
     expect(state.todos).toEqual([]);
@@ -11,7 +11,7 @@ describe('storeFactory', () => {
   });
 
   it('should add new todo', () => {
-    const store = storeFactory();
+    const store = createStore();
 
     store.dispatch(onCreate('Demo'));
 

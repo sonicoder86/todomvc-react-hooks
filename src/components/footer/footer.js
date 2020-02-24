@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FILTERS } from '../constants/Filters';
-import { withStateAndDispatch } from '../store/container';
+import { FILTERS } from '../../constants/filter';
+import { withStateAndDispatch } from '../../store';
 
 export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelect, onClearCompleted }) {
   const filterTitles = [

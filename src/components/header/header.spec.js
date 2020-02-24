@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { HeaderContainer } from './Header';
-import { storeFactory } from '../store/factory';
+import { HeaderContainer } from './header';
+import { createStore } from '../../store';
 
 describe.only('Header', () => {
   it('should add new element to store', () => {
-    const store = storeFactory();
+    const store = createStore();
     const { getByTestId } = render(
       <Provider store={store}>
         <HeaderContainer />

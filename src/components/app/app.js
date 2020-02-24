@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { TodoLocal } from '../services/TodoLocal';
-import { withStateAndDispatch } from '../store/container';
-import { HeaderContainer } from './Header';
-import { ListContainer } from './List';
-import { FooterContainer } from './Footer';
-import { CopyRight } from './CopyRight';
+import { TodoLocal } from '../../services/todo-local';
+import { withStateAndDispatch } from '../../store';
+import { HeaderContainer } from '../header/header';
+import { ListContainer } from '../list/list';
+import { FooterContainer } from '../footer/footer';
+import { CopyRight } from '../copy-right/copy-right';
 
 export function App({ todos, onLoad }) {
   useEffect(() => {

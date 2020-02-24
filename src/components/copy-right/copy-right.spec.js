@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { CopyRight } from './CopyRight';
+import { CopyRight } from './copy-right';
 
 describe('CopyRight', () => {
   it('should render component', () => {

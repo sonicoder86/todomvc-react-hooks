@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withStateAndDispatch } from '../store/container';
+import { withStateAndDispatch } from '../../store';
 const ENTER_KEY = 'Enter';
 
 export function Header({ onCreate }) {
