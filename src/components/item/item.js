@@ -10,7 +10,7 @@ export function Item({ todo, onUpdate, onRemove }) {
 
   const handleCompleted = () => {
     onUpdate({
-      id :todo.id,
+      id: todo.id,
       completed: !todo.completed
     });
   };

@@ -1,5 +1,5 @@
 import { createStore } from './index';
-import { onCreate } from './actions';
+import { onCreate } from './actions/todo';
 
 describe('createStore', () => {
   it('should create a new instance of store', () => {

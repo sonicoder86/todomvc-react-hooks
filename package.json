@@ -22,8 +22,7 @@
     "test": "npm run test:unit",
     "test:unit": "react-scripts test --watchAll=false",
     "test:e2e": "start-server-and-test start http://localhost:9300 cypress",
-    "cypress": "cypress run",
-    "eject": "react-scripts eject"
+    "cypress": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
