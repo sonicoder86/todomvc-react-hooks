@@ -52,6 +52,7 @@ export function Item({ todo, onUpdate, onRemove }) {
           value={name}
           onInput={handleChange}
           onBlur={handleBlur}
+          onChange={() => {}}
         />
       }
     </li>

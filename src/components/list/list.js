@@ -1,34 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { Item } from '../item/item';
-import { withStateAndDispatch } from '../../store';
+import { selectVisible } from '../../store/selectors/todo';
+import { onUpdate, onRemove, onCompleteAll } from '../../store/actions/todo';
 
-export function List({ visibleTodos, areAllCompleted, onUpdate, onRemove, onCompleteAll }) {
+export function List() {
+  const dispatch = useDispatch();
+  const visibleTodos = useSelector(state => selectVisible(state.todos, state.filter));
+  const areAllCompleted = useSelector(state => state.todos.length && state.todos.every(todo => todo.completed));
+  const completeAll = () => dispatch(onCompleteAll());
+  const update = values => dispatch(onUpdate(values));
+  const remove = id => dispatch(onRemove(id));
+
   return (
     <section className="main">
       <input id="toggle-all" className="toggle-all" type="checkbox" checked={areAllCompleted} readOnly />
-      <label htmlFor="toggle-all" onClick={onCompleteAll}></label>
+      <label htmlFor="toggle-all" onClick={completeAll}></label>
 
       <ul className="todo-list">
         {visibleTodos.map(todo =>
           <Item
             key={todo.id}
             todo={todo}
-            onUpdate={onUpdate}
-            onRemove={onRemove}
+            onUpdate={update}
+            onRemove={remove}
           />
         )}
       </ul>
     </section>
   );
 }
-
-List.propTypes = {
-  visibleTodos: PropTypes.array.isRequired,
-  areAllCompleted: PropTypes.bool.isRequired,
-  onUpdate: PropTypes.func.isRequired,
-  onRemove: PropTypes.func.isRequired,
-  onCompleteAll: PropTypes.func.isRequired
-};
-
-export const ListContainer = withStateAndDispatch(List);

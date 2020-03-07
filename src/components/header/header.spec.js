@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { HeaderContainer } from './header';
+import { Header } from './header';
 import { createStore } from '../../store';
 
 describe.only('Header', () => {
@@ -9,7 +9,7 @@ describe.only('Header', () => {
     const store = createStore();
     const { getByTestId } = render(
       <Provider store={store}>
-        <HeaderContainer />
+        <Header />
       </Provider>
     );
 

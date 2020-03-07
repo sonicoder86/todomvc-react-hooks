@@ -1,15 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { FILTERS } from '../../constants/filter';
-import { withStateAndDispatch } from '../../store';
+import { selectCompleted, selectNotCompleted } from '../../store/selectors/todo';
+import { onClearCompleted } from '../../store/actions/todo';
+import { onFilterSelect } from '../../store/actions/filter';
 
-export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelect, onClearCompleted }) {
+export function Footer() {
   const filterTitles = [
     { key: FILTERS.all, value: 'All' },
     { key: FILTERS.active, value: 'Active' },
     { key: FILTERS.completed, value: 'Completed' }
   ];
+  const dispatch = useDispatch();
+  const completedCount = useSelector(state => selectCompleted(state.todos).length);
+  const itemsLeft = useSelector(state => selectNotCompleted(state.todos).length);
+  const filter = useSelector(state => state.filter);
+  const clearCompleted = () => dispatch(onClearCompleted());
+  const filterSelect = filter => dispatch(onFilterSelect(filter));
 
   const itemText = itemsLeft === 1 ? 'item' : 'items';
 
@@ -22,7 +30,7 @@ export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelec
             <a
               href="#"
               className={classNames({ selected: filterTitle.key === filter })}
-              onClick={() => onFilterSelect(filterTitle.key)}
+              onClick={() => filterSelect(filterTitle.key)}
             >
               {filterTitle.value}
             </a>
@@ -31,19 +39,8 @@ export function Footer({ todos, filter, itemsLeft, completedCount, onFilterSelec
       </ul>
       {
         !!completedCount &&
-        <button className="clear-completed" onClick={onClearCompleted}>Clear completed</button>
+        <button className="clear-completed" onClick={clearCompleted}>Clear completed</button>
       }
     </footer>
   );
 }
-
-Footer.propTypes = {
-  todos: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
-  itemsLeft: PropTypes.number.isRequired,
-  completedCount: PropTypes.number.isRequired,
-  onClearCompleted: PropTypes.func.isRequired,
-  onFilterSelect: PropTypes.func.isRequired
-};
-
-export const FooterContainer = withStateAndDispatch(Footer);

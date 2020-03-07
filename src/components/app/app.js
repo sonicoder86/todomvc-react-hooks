@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { onLoad } from '../../store/actions/todo';
 import { TodoLocal } from '../../services/todo-local';
-import { withStateAndDispatch } from '../../store';
-import { HeaderContainer } from '../header/header';
-import { ListContainer } from '../list/list';
-import { FooterContainer } from '../footer/footer';
+import { Header } from '../header/header';
+import { List } from '../list/list';
+import { Footer } from '../footer/footer';
 import { CopyRight } from '../copy-right/copy-right';
 
-export function App({ todos, onLoad }) {
+export function App() {
+  const dispatch = useDispatch();
+  const todos = useSelector(state => state.todos);
+
   useEffect(() => {
-    onLoad(TodoLocal.loadTodos());
-  }, [onLoad]);
+    dispatch(
+      onLoad(TodoLocal.loadTodos())
+    );
+  }, [dispatch]);
 
   useEffect(() => {
     TodoLocal.storeTodos(todos);
@@ -19,24 +24,17 @@ export function App({ todos, onLoad }) {
   return (
     <div id="app">
       <section className="todoapp">
-        <HeaderContainer />
+        <Header />
         {
           !!todos.length &&
-          <ListContainer />
+          <List />
         }
         {
           !!todos.length &&
-          <FooterContainer />
+          <Footer />
         }
       </section>
       <CopyRight />
     </div>
   );
 }
-
-App.propTypes = {
-  todos: PropTypes.array.isRequired,
-  onLoad: PropTypes.func.isRequired
-};
-
-export const AppContainer = withStateAndDispatch(App);

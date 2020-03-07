@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { withStateAndDispatch } from '../../store';
+import { useDispatch } from 'react-redux';
+import { onCreate } from '../../store/actions/todo';
 const ENTER_KEY = 'Enter';
 
-export function Header({ onCreate }) {
+export function Header() {
   const [name, setName] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = event => setName(event.target.value);
 
@@ -13,6 +14,7 @@ export function Header({ onCreate }) {
       return;
     }
 
+    dispatch(onCreate(name));
     onCreate(name);
     setName('');
   };
@@ -32,9 +34,3 @@ export function Header({ onCreate }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  onCreate: PropTypes.func.isRequired
-};
-
-export const HeaderContainer = withStateAndDispatch(Header);
