@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Header } from './header';
 import { createStore } from '../../store';
 
-describe.only('Header', () => {
+describe('Header', () => {
   it('should add new element to store', () => {
     const store = createStore();
     const { getByTestId } = render(
