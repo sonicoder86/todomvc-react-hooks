@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "https://blacksonic.github.io/todomvc-react/static/js/main.f15599d4.chunk.js",
+    "main.js.map": "https://blacksonic.github.io/todomvc-react/static/js/main.f15599d4.chunk.js.map",
+    "runtime-main.js": "https://blacksonic.github.io/todomvc-react/static/js/runtime-main.d63c6c5a.js",
+    "runtime-main.js.map": "https://blacksonic.github.io/todomvc-react/static/js/runtime-main.d63c6c5a.js.map",
+    "static/css/2.f124e354.chunk.css": "https://blacksonic.github.io/todomvc-react/static/css/2.f124e354.chunk.css",
+    "static/js/2.3bd0e42d.chunk.js": "https://blacksonic.github.io/todomvc-react/static/js/2.3bd0e42d.chunk.js",
+    "static/js/2.3bd0e42d.chunk.js.map": "https://blacksonic.github.io/todomvc-react/static/js/2.3bd0e42d.chunk.js.map",
+    "index.html": "https://blacksonic.github.io/todomvc-react/index.html",
+    "precache-manifest.c73b4fa20618736d2e88384bac308f93.js": "https://blacksonic.github.io/todomvc-react/precache-manifest.c73b4fa20618736d2e88384bac308f93.js",
+    "service-worker.js": "https://blacksonic.github.io/todomvc-react/service-worker.js",
+    "static/css/2.f124e354.chunk.css.map": "https://blacksonic.github.io/todomvc-react/static/css/2.f124e354.chunk.css.map",
+    "static/js/2.3bd0e42d.chunk.js.LICENSE.txt": "https://blacksonic.github.io/todomvc-react/static/js/2.3bd0e42d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d63c6c5a.js",
+    "static/css/2.f124e354.chunk.css",
+    "static/js/2.3bd0e42d.chunk.js",
+    "static/js/main.f15599d4.chunk.js"
+  ]
+}
