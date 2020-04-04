@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "PORT=9300 BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "npm run test:unit",
     "test:unit": "react-scripts test --watchAll=false",
     "test:e2e": "start-server-and-test start http://localhost:9300 cypress",

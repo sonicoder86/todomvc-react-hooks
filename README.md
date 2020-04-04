@@ -1,6 +1,10 @@
-# TodoApp built with React Hooks and Redux
+# TodoMVC built with React Hooks and Redux
 
-The well-known TodoApp built with React Hooks and Redux in a well-structured way.
+[![Build Status](https://travis-ci.com/blacksonic/todomvc-react-hooks.svg?branch=master)](https://travis-ci.com/blacksonic/todomvc-react-hooks)
+
+The well-known TodoMVC built with React Hooks and Redux in a structured and testable way.
+
+![TodoMVC React Hooks](./images/screenshot.png "TodoMVC React Hooks")
 
 [Edit and try it out online](https://codesandbox.io/s/github/blacksonic/todoapp-react-hooks)
 
