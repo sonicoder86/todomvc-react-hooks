@@ -6,7 +6,7 @@ The well-known TodoMVC built with React Hooks and Redux in a structured and test
 
 ![TodoMVC React Hooks](./images/screenshot.png "TodoMVC React Hooks")
 
-[Edit and try it out online](https://codesandbox.io/s/github/blacksonic/todoapp-react-hooks)
+[Edit and try it out online](https://codesandbox.io/s/github/blacksonic/todomvc-react-hooks)
 
 ## Concepts and tools covered
 
@@ -25,3 +25,14 @@ The well-known TodoMVC built with React Hooks and Redux in a structured and test
 
 Application is compatible with [React devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) 
 and [Redux devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+
+## Series
+
+This implementation is part of a series where the same application was implemented with the same architecture.
+
+- [Vue](https://github.com/blacksonic/todomvc-vue)
+- [Vue Composition API](https://github.com/blacksonic/todomvc-vue-composition-api)
+- [Angular](https://github.com/blacksonic/todomvc-angular)
+- [React](https://github.com/blacksonic/todomvc-react)
+- [React Hooks](https://github.com/blacksonic/todomvc-react-hooks)
+- [Svelte](https://github.com/blacksonic/todomvc-svelte)
