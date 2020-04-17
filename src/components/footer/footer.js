@@ -17,15 +17,18 @@ export function Footer() {
   const itemsLeft = useSelector(state => selectNotCompleted(state.todos).length);
   const filter = useSelector(state => state.filter);
   const clearCompleted = () => dispatch(onClearCompleted());
-  const filterSelect = filter => dispatch(onFilterSelect(filter));
+  const filterSelect = selectedFilter => dispatch(onFilterSelect(selectedFilter));
 
   const itemText = itemsLeft === 1 ? 'item' : 'items';
 
   return (
     <footer className="footer">
-      <span className="todo-count"><strong>{itemsLeft}</strong><span> {itemText} left</span></span>
+      <span className="todo-count">
+        <strong>{itemsLeft}</strong>
+        <span> {itemText} left</span>
+      </span>
       <ul className="filters">
-        {filterTitles.map(filterTitle =>
+        {filterTitles.map(filterTitle => (
           <li key={filterTitle.key}>
             <a
               href="#"
@@ -35,12 +38,13 @@ export function Footer() {
               {filterTitle.value}
             </a>
           </li>
-        )}
+        ))}
       </ul>
-      {
-        !!completedCount &&
-        <button className="clear-completed" onClick={clearCompleted}>Clear completed</button>
-      }
+      {!!completedCount && (
+        <button className="clear-completed" onClick={clearCompleted}>
+          Clear completed
+        </button>
+      )}
     </footer>
   );
 }

@@ -7,7 +7,7 @@ import { App } from './components/app/app';
 
 render(
   <Provider store={createStore()}>
-    <App  />
+    <App />
   </Provider>,
   document.getElementsByTagName('app-root')[0]
 );

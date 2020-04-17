@@ -15,17 +15,12 @@ export function List() {
   return (
     <section className="main">
       <input id="toggle-all" className="toggle-all" type="checkbox" checked={areAllCompleted} readOnly />
-      <label htmlFor="toggle-all" onClick={completeAll}></label>
+      <label htmlFor="toggle-all" onClick={completeAll} />
 
       <ul className="todo-list">
-        {visibleTodos.map(todo =>
-          <Item
-            key={todo.id}
-            todo={todo}
-            onUpdate={update}
-            onRemove={remove}
-          />
-        )}
+        {visibleTodos.map(todo => (
+          <Item key={todo.id} todo={todo} onUpdate={update} onRemove={remove} />
+        ))}
       </ul>
     </section>
   );

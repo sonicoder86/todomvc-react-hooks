@@ -12,9 +12,7 @@ export function App() {
   const todos = useSelector(state => state.todos);
 
   useEffect(() => {
-    dispatch(
-      onLoad(TodoLocal.loadTodos())
-    );
+    dispatch(onLoad(TodoLocal.loadTodos()));
   }, [dispatch]);
 
   useEffect(() => {
@@ -25,14 +23,8 @@ export function App() {
     <div id="app">
       <section className="todoapp">
         <Header />
-        {
-          !!todos.length &&
-          <List />
-        }
-        {
-          !!todos.length &&
-          <Footer />
-        }
+        {!!todos.length && <List />}
+        {!!todos.length && <Footer />}
       </section>
       <CopyRight />
     </div>

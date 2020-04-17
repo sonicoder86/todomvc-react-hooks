@@ -32,29 +32,15 @@ export function Item({ todo, onUpdate, onRemove }) {
   return (
     <li className={classNames({ completed, editing })} data-testid="todo-item">
       <div className="view">
-        <input
-          className="toggle"
-          type="checkbox"
-          checked={completed}
-          onChange={handleCompleted}
-        />
-        <label onDoubleClick={handleEdit} data-testid="todo-name">{todo.name}</label>
-        <button
-          className="destroy"
-          onClick={handleRemove}
-          data-testid="todo-remove"
-        />
+        <input className="toggle" type="checkbox" checked={completed} onChange={handleCompleted} />
+        <label onDoubleClick={handleEdit} data-testid="todo-name">
+          {todo.name}
+        </label>
+        <button className="destroy" onClick={handleRemove} data-testid="todo-remove" />
       </div>
-      {
-        editing &&
-        <input
-          className="edit"
-          value={name}
-          onInput={handleChange}
-          onBlur={handleBlur}
-          onChange={() => {}}
-        />
-      }
+      {editing && (
+        <input className="edit" value={name} onInput={handleChange} onBlur={handleBlur} onChange={() => {}} />
+      )}
     </li>
   );
 }
