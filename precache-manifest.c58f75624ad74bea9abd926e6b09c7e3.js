@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4628a583142d100e6e38ba59af714182",
+    "revision": "bc99ec62c3f30e0479bcad73390b372e",
     "url": "https://blacksonic.github.io/todomvc-react-hooks/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://blacksonic.github.io/todomvc-react-hooks/static/js/2.3bd0e42d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "92f7cedaac2aaefff54f",
-    "url": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.7038e633.chunk.js"
+    "revision": "47820d6c2a0dd0e91e08",
+    "url": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.f82cdd28.chunk.js"
   },
   {
     "revision": "369d05c54cfa5a125395",
