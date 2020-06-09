@@ -31,7 +31,7 @@ export function Footer() {
         {filterTitles.map(filterTitle => (
           <li key={filterTitle.key}>
             <a
-              href="#"
+              href="./#"
               className={classNames({ selected: filterTitle.key === filter })}
               onClick={() => filterSelect(filterTitle.key)}
             >
