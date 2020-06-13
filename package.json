@@ -6,7 +6,7 @@
     "url": "git+https://github.com/blacksonic/todomvc-react-hooks.git"
   },
   "scripts": {
-    "start": "PORT=9300 BROWSER=none react-scripts start",
+    "start": "react-scripts start .env",
     "build": "CI=false react-scripts build",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "lint": "eslint 'src/**/*.{js,jsx}'",
@@ -25,7 +25,6 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "todomvc-app-css": "^2.3.0",
     "uuid": "^8.1.0"
   },
   "devDependencies": {

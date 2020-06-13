@@ -33,9 +33,10 @@ export function Item({ todo, onUpdate, onRemove }) {
     <li className={classNames({ completed, editing })} data-testid="todo-item">
       <div className="view">
         <input className="toggle" type="checkbox" checked={completed} onChange={handleCompleted} />
-        <label onDoubleClick={handleEdit} data-testid="todo-name">
+        <label >
           {todo.name}
         </label>
+        <button className="destroy-edit" onClick={handleEdit} data-testid="todo-name"/>
         <button className="destroy" onClick={handleRemove} data-testid="todo-remove" />
       </div>
       {editing && (
