@@ -5,6 +5,7 @@ import classNames from 'classnames';
 export function Item({ todo, onUpdate, onRemove }) {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(todo.name);
+  const [timestamp] = useState(todo.timestamp);
 
   const handleEdit = () => setEditing(true);
 
@@ -19,6 +20,15 @@ export function Item({ todo, onUpdate, onRemove }) {
 
   const handleChange = event => setName(event.target.value);
 
+  const dateFormated = (timestamp) => {
+    const myDate = new Date(timestamp)
+    const hours = myDate.getHours();
+    const minutes = myDate.getMinutes();
+    const seconds = myDate.getSeconds();
+    const localDate = (myDate).toLocaleDateString().split('.').reverse().join('-');
+    return localDate + " " + hours + ":" + minutes + ":" + seconds + " - "
+  }
+
   const handleBlur = () => {
     onUpdate({
       id: todo.id,
@@ -30,11 +40,12 @@ export function Item({ todo, onUpdate, onRemove }) {
   const { completed } = todo;
 
   return (
-    <li className={classNames({ completed, editing })} data-testid="todo-item">
+    <li className={classNames({ completed, editing, timestamp })} data-testid="todo-item">
       <div className="view">
         <input className="toggle" type="checkbox" checked={completed} onChange={handleCompleted} />
         <label >
-          {todo.name}
+        <span className="date-span">{dateFormated(timestamp)}</span>
+        {todo.name}
         </label>
         <button className="destroy-edit" onClick={handleEdit} data-testid="todo-name"/>
         <button className="destroy" onClick={handleRemove} data-testid="todo-remove" />

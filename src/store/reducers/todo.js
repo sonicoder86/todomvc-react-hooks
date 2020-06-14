@@ -9,7 +9,7 @@ export const todosReducer = (state = [], action) => {
     case ACTION_TYPES.load:
       return [...action.todos];
     case ACTION_TYPES.create:
-      return [...state, { id: uuidv4(), name: action.name, completed: false }];
+      return [...state, { id: uuidv4(), name: action.name, completed: false, timestamp: Date.now() }];
     case ACTION_TYPES.update:
       return state.map(todo => (todo.id === action.values.id ? { ...todo, ...action.values } : todo));
     case ACTION_TYPES.remove:
