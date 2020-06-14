@@ -10,7 +10,7 @@ export function selectNotCompleted(todos) {
 
 export function selectVisible(todos, filter) {
   switch (filter) {
-    case FILTERS.all:
+    case FILTERS.filter:
       return [...todos];
     case FILTERS.completed:
       return selectCompleted(todos);

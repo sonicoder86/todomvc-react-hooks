@@ -1,14 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCompleted, selectNotCompleted } from '../../store/selectors/todo';
-import { onClearCompleted } from '../../store/actions/todo';
+import { useSelector } from 'react-redux';
+import { selectVisible } from '../../store/selectors/todo';
+import { onFilterSelect } from '../../store/actions/filter';
+
 
 export function Footer() {
   
-  const dispatch = useDispatch();
-  const completedCount = useSelector(state => selectCompleted(state.todos).length);
-  const itemsLeft = useSelector(state => selectNotCompleted(state.todos).length);
-
+  const selectedFilter = useSelector(selectedFilter => onFilterSelect(selectedFilter.filter).filter);
+  const itemsLeft = useSelector(state => selectVisible(state.todos, selectedFilter ).length);
   const itemText = itemsLeft === 1 ? 'item' : 'items';
 
   return (
