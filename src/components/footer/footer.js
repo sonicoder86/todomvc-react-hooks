@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="footer">
       <span className="todo-count">
         <strong>{itemsLeft}</strong>
-        <span> {itemText} left</span>
+        <span> {itemText}</span>
       </span>
       
       
