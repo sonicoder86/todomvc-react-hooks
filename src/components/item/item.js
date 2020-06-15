@@ -26,7 +26,14 @@ export function Item({ todo, onUpdate, onRemove }) {
     const minutes = myDate.getMinutes();
     const seconds = myDate.getSeconds();
     const localDate = (myDate).toLocaleDateString().split('.').reverse().join('-');
-    return localDate + " " + hours + ":" + minutes + ":" + seconds + " - "
+    //
+    if(todo.completed === false) {
+      return `${localDate}  ${hours}:${minutes}:${seconds}  - `;
+    } else {
+      return `Completed in ${Math.floor(((Date.now() - todo.timestamp)/60000)/60)} hours `;
+    }
+    //
+    
   }
 
   const handleBlur = () => {
