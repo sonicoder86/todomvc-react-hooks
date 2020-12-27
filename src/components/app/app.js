@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { onLoad } from '../../store/actions/todo';
 import { TodoLocal } from '../../services/todo-local';

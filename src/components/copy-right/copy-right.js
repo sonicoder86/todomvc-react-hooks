@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function CopyRight() {
   return (
     <footer className="info">

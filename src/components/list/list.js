@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Item } from '../item/item';
 import { selectVisible } from '../../store/selectors/todo';
