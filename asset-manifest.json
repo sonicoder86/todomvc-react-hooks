@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.f82cdd28.chunk.js",
-    "main.js.map": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.f82cdd28.chunk.js.map",
+    "main.js": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.9000d7ab.chunk.js",
+    "main.js.map": "https://blacksonic.github.io/todomvc-react-hooks/static/js/main.9000d7ab.chunk.js.map",
     "runtime-main.js": "https://blacksonic.github.io/todomvc-react-hooks/static/js/runtime-main.27a53bb9.js",
     "runtime-main.js.map": "https://blacksonic.github.io/todomvc-react-hooks/static/js/runtime-main.27a53bb9.js.map",
     "static/css/2.f124e354.chunk.css": "https://blacksonic.github.io/todomvc-react-hooks/static/css/2.f124e354.chunk.css",
     "static/js/2.b6235d16.chunk.js": "https://blacksonic.github.io/todomvc-react-hooks/static/js/2.b6235d16.chunk.js",
     "static/js/2.b6235d16.chunk.js.map": "https://blacksonic.github.io/todomvc-react-hooks/static/js/2.b6235d16.chunk.js.map",
     "index.html": "https://blacksonic.github.io/todomvc-react-hooks/index.html",
-    "precache-manifest.3a1b6ec78ee279462013d09e32b9eeae.js": "https://blacksonic.github.io/todomvc-react-hooks/precache-manifest.3a1b6ec78ee279462013d09e32b9eeae.js",
+    "precache-manifest.ae364cdec744014bd808e9651611a8e7.js": "https://blacksonic.github.io/todomvc-react-hooks/precache-manifest.ae364cdec744014bd808e9651611a8e7.js",
     "service-worker.js": "https://blacksonic.github.io/todomvc-react-hooks/service-worker.js",
     "static/css/2.f124e354.chunk.css.map": "https://blacksonic.github.io/todomvc-react-hooks/static/css/2.f124e354.chunk.css.map",
     "static/js/2.b6235d16.chunk.js.LICENSE.txt": "https://blacksonic.github.io/todomvc-react-hooks/static/js/2.b6235d16.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.27a53bb9.js",
     "static/css/2.f124e354.chunk.css",
     "static/js/2.b6235d16.chunk.js",
-    "static/js/main.f82cdd28.chunk.js"
+    "static/js/main.9000d7ab.chunk.js"
   ]
 }
