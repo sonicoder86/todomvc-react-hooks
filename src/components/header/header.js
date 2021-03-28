@@ -16,7 +16,6 @@ export function Header() {
     }
 
     dispatch(onCreate(name));
-    onCreate(name);
     setName('');
   };
 
