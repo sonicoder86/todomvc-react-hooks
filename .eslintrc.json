@@ -1,11 +1,11 @@
 {
   "plugins": ["prettier"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "extends": ["airbnb"],
+  "extends": ["react-app"],
   "env": {
     "browser": true,
     "jest": true
