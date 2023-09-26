@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { ACTION_TYPES } from '../../constants/action-type';
 import { selectCompleted, selectNotCompleted } from '../selectors/todo';
 
@@ -9,7 +8,7 @@ export const todosReducer = (state = [], action) => {
     case ACTION_TYPES.load:
       return [...action.todos];
     case ACTION_TYPES.create:
-      return [...state, { id: uuidv4(), name: action.name, completed: false }];
+      return [...state, { id: action.id, name: action.name, completed: false }];
     case ACTION_TYPES.update:
       return state.map(todo => (todo.id === action.values.id ? { ...todo, ...action.values } : todo));
     case ACTION_TYPES.remove:
